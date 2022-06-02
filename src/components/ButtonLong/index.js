@@ -1,6 +1,6 @@
 import React from 'react'
-import { View, StyleSheet, Text, Pressable } from 'react-native'
-import { LIME, W } from '../../constants'
+import { StyleSheet, Text, Pressable } from 'react-native'
+import { BLACK, LIME, W } from '../../constants'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
 export function ButtonLong({ title, onPress, iconName }) {
@@ -10,19 +10,19 @@ export function ButtonLong({ title, onPress, iconName }) {
       style={({ pressed }) => [container, pressed && pressedCont]}
     >
       <Text style={titleS}>{title}</Text>
-      <Ionicons color={LIME} size={25} name={iconName} />
+      <Ionicons color={BLACK} size={25} name={iconName} />
     </Pressable>
   )
 }
 
 const styles = StyleSheet.create({
   titleS: {
-    color: LIME,
+    color: BLACK,
     fontSize: 20,
     fontFamily: 'AvenirNext-DemiBold'
   },
   container: {
-    borderColor: LIME,
+    borderColor: BLACK,
     borderWidth: 2,
     width: W - 70,
     borderRadius: 20,
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   pressedCont: {
-    backgroundColor: 'rgba(0, 255, 0, .1)'
+    backgroundColor: 'rgba(28, 40, 51, .1)'
   }
 })
 const { titleS, container, pressedCont } = styles

@@ -4,7 +4,7 @@ export const BLUE = '#30d0fe'
 export const WHITE = '#fff'
 export const LIME = '#00FF00'
 export const SILVER = '#C0C0C0'
-
+export const BLACK = '#1C2833'
 export const win = Dimensions.get('window')
 export const W = win.width
 export const H = win.height
