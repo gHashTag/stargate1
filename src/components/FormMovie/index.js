@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
   },
   multiInput: {
     fontSize: 22,
+    paddingHorizontal: 14,
     fontFamily: 'AvenirNext-DemiBold',
     borderColor: BLUE,
     borderWidth: 1,

@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, ScrollView, KeyboardAvoidingView } from 'react-native'
-import { FormMovie, Header } from '../../components'
+import { FormMovie, Header, Space } from '../../components'
 import { BLUE, WHITE } from '../../constants'
 import { useHeaderHeight } from '@react-navigation/elements'
 import { useDispatch } from 'react-redux'
@@ -24,16 +24,16 @@ export function AddMovieScreen({ navigation }) {
         colorLeft={WHITE}
       />
       <KeyboardAvoidingView
-        style={{ flex: 1 }}
+        style={flex1}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         keyboardVerticalOffset={headerHeight}
       >
         <ScrollView>
           <View style={screenCont}>
-            <View style={{ height: 50 }} />
+            <Space height={50} />
             <FormMovie onSubmit={handleSubmit} />
           </View>
-          <View style={{ height: 70 }} />
+          <Space height={70} />
         </ScrollView>
       </KeyboardAvoidingView>
     </>
@@ -44,6 +44,9 @@ const styles = StyleSheet.create({
   screenCont: {
     flex: 1,
     alignItems: 'center'
+  },
+  flex1: {
+    flex: 1
   }
 })
-const { screenCont } = styles
+const { screenCont, flex1 } = styles

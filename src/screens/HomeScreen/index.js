@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
 import { View, FlatList } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
-// import { searchChanged, getMovies } from '../actions'
-import { ButtonLong, Header, ImageCard, Search } from '../../components'
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
+import { ButtonLong, Header, ImageCard, Search, Space } from '../../components'
 import { nanoid } from 'nanoid/non-secure'
 import { useSelector } from 'react-redux'
-
-// const url = 'https://api.tvmaze.com/search/shows?q=stargate'
 
 export function HomeScreen({ navigation }) {
   const [visibleSearch, setVisibleSearch] = useState(false)
@@ -22,8 +19,9 @@ export function HomeScreen({ navigation }) {
   function goAddMovie() {
     navigation.navigate('ADD_MOVIE_SCREEN')
   }
+  const { bottom } = useSafeAreaInsets()
   return (
-    <SafeAreaView>
+    <View>
       {visibleSearch ? (
         <Search
           colorRight={'#fff'}
@@ -55,7 +53,7 @@ export function HomeScreen({ navigation }) {
             <View style={{ height: 20 }} />
           </>
         }
-        ListFooterComponent={<View style={{ height: 100 }} />}
+        ListFooterComponent={<Space height={bottom + 100} />}
         contentContainerStyle={{ alignItems: 'center' }}
         keyExtractor={item => nanoid()}
         showsVerticalScrollIndicator={false}
@@ -66,6 +64,6 @@ export function HomeScreen({ navigation }) {
           />
         )}
       />
-    </SafeAreaView>
+    </View>
   )
 }
